@@ -4,14 +4,14 @@ createApp({
     data(){
         return{
             apiUrl: 'server.php',
-            todos: []
+            dischi: []
         }
     },
     methods:{
         getDischi(){
             axios.get(this.apiUrl)
             .then(r => {
-                todos = r.data;
+                dischi = r.data;
             })
         }
     },
