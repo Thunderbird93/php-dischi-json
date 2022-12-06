@@ -3,19 +3,20 @@ const { createApp } = Vue;
 createApp({
     data(){
         return{
-            apiUrl: 'server.php'
+            apiUrl: 'server.php',
+            todos: []
         }
     },
     methods:{
-        getTodos(){
+        getDischi(){
             axios.get(this.apiUrl)
             .then(r => {
-                console.log(r.data);
+                todos = r.data;
             })
         }
     },
     mounted(){
-        this.getTodos();
+        this.getDischi();
     }
 
 }).mount('#app');
